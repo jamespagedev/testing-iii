@@ -6,22 +6,27 @@ import Controls from '../controls/Controls';
 class Dashboard extends React.Component {
   state = {
     locked: false,
-    closed: false,
+    closed: false
   };
 
   render() {
     const { closed, locked } = this.state;
 
     return (
-      <>
-        <Display locked={locked} closed={closed} />
+      <React.Fragment data-testid='dashboard-component'>
+        <Display
+          data-testid='display-component'
+          locked={locked}
+          closed={closed}
+        />
         <Controls
+          data-testid='controls-component'
           locked={locked}
           closed={closed}
           toggleLocked={this.toggleLocked}
           toggleClosed={this.toggleClosed}
         />
-      </>
+      </React.Fragment>
     );
   }
 

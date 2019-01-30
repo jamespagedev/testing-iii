@@ -1,11 +1,11 @@
 // Test away!
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 import Display from './Display';
 
-/* Tests:
+/* HasFailingTests[X] Testsuite <Display />:
   - [X] Testset: displays if gate is open/closed and if it is locked/unlocked
     - [X] Testcase: Gate Closed and Locked
     - [X] Testcase: Gate Closed and Unlocked
@@ -99,10 +99,9 @@ describe('Testsuite: <Display />', () => {
 
     // Testcase
     it('Testcase: closed - red-led class assigned to element', () => {
-      // const { getByText, getByTestId } = render(<Display locked={true} />);
-      const { getByTestId, container } = render(<Display closed={true} />);
-      const classRedLed = getByTestId(container, 'red-led');
-      expect(classRedLed).toHaveClass('red-led');
+      const { getByTestId } = render(<Display closed={true} />);
+      const closed = getByTestId('closed');
+      expect(closed).toHaveClass('red-led');
     });
   });
 

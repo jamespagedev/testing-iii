@@ -5,10 +5,10 @@ import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 import Dashboard from './Dashboard.js';
 
-/* AllTestsFail[X] Testsuite <Dashboard />:
-  - Fail[X] Testset: shows the controls and display
-    - Fail[X] Testcase: Shows Controls component
-    - Fail[X] Testcase: Shows Display component
+/* [X] Testsuite <Dashboard />:
+  - [X] Testset: shows the controls and display
+    - [X] Testcase: Shows Controls component
+    - [X] Testcase: Shows Display component
 */
 
 // Testsuite
@@ -20,6 +20,7 @@ describe('Testsuite: <Dashboard />', () => {
       const { queryByTestId } = render(<Dashboard />);
       const ancestor = queryByTestId('dashboard-component');
       const controls = queryByTestId('controls-component');
+      console.log('controls', controls);
       expect(ancestor).toContainElement(controls);
     });
 

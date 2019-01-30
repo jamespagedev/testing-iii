@@ -5,7 +5,7 @@ import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 import Display from './Display';
 
-/* HasFailingTests[X] Testsuite <Display />:
+/* [X] Testsuite <Display />:
   - [X] Testset: displays if gate is open/closed and if it is locked/unlocked
     - [X] Testcase: Gate Closed and Locked
     - [X] Testcase: Gate Closed and Unlocked
@@ -16,12 +16,12 @@ import Display from './Display';
   - [X] Testset: displays 'Locked' if the locked prop is true and 'Unlocked' if othewise
     - [X] Testcase: locked prop true - display 'Locked'
     - [X] Testcase: locked prop false - display 'unlocked'
-  - Fails[X] Testset: when locked or closed use the red-led class
-    - Fails[X] Testcase: locked - red-led class assigned to element
-    - Fails[X] Testcase: closed - red-led class assigned to element
-  - Fails[X] Testset: when unlocked or open use the green-led class
-    - Fails[X] Testcase: unlocked - green-led class assigned to element
-    - Fails[X] Testcase: open - green-led class assigned to element
+  - [X] Testset: when locked or closed use the red-led class
+    - [X] Testcase: locked - red-led class assigned to element
+    - [X] Testcase: closed - red-led class assigned to element
+  - [X] Testset: when unlocked or open use the green-led class
+    - [X] Testcase: unlocked - green-led class assigned to element
+    - [X] Testcase: open - green-led class assigned to element
 */
 
 // Testsuite
@@ -92,9 +92,9 @@ describe('Testsuite: <Display />', () => {
     // Testcase
     it('Testcase: locked - red-led class assigned to element', () => {
       // const { getByText, getByTestId } = render(<Display locked={true} />);
-      const { getByTestId, container } = render(<Display locked={true} />);
-      const classRedLed = getByTestId(container, 'red-led');
-      expect(classRedLed).toHaveClass('red-led');
+      const { getByTestId } = render(<Display locked={true} />);
+      const locked = getByTestId('locked');
+      expect(locked).toHaveClass('red-led');
     });
 
     // Testcase
@@ -109,18 +109,16 @@ describe('Testsuite: <Display />', () => {
   describe('Testset: when unlocked or open use the green-led class', () => {
     // Testcase
     it('Testcase: unlocked - green-led class assigned to element', () => {
-      // const { getByText, getByTestId } = render(<Display locked={true} />);
-      const { getByTestId, container } = render(<Display locked={false} />);
-      const classRedLed = getByTestId(container, 'green-led');
-      expect(classRedLed).toHaveClass('green-led');
+      const { getByTestId } = render(<Display locked={false} />);
+      const locked = getByTestId('locked');
+      expect(locked).toHaveClass('green-led');
     });
 
     // Testcase
     it('Testcase: open - green-led class assigned to element', () => {
-      // const { getByText, getByTestId } = render(<Display locked={true} />);
-      const { getByTestId, container } = render(<Display closed={false} />);
-      const classRedLed = getByTestId(container, 'green-led');
-      expect(classRedLed).toHaveClass('green-led');
+      const { getByTestId } = render(<Display closed={false} />);
+      const closed = getByTestId('closed');
+      expect(closed).toHaveClass('green-led');
     });
   });
 });

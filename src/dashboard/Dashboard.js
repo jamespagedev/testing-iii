@@ -13,20 +13,15 @@ class Dashboard extends React.Component {
     const { closed, locked } = this.state;
 
     return (
-      <React.Fragment data-testid='dashboard-component'>
-        <Display
-          data-testid='display-component'
-          locked={locked}
-          closed={closed}
-        />
+      <div data-testid='dashboard-component'>
+        <Display locked={locked} closed={closed} />
         <Controls
-          data-testid='controls-component'
           locked={locked}
           closed={closed}
           toggleLocked={this.toggleLocked}
           toggleClosed={this.toggleClosed}
         />
-      </React.Fragment>
+      </div>
     );
   }
 

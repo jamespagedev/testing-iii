@@ -21,6 +21,6 @@ describe('<Display />', () => {
     const { getByText } = render(<Display closed={true} locked={true} />);
 
     getByText(/closed/i);
-    getByText(/unlocked/i);
+    getByText(/locked/i);
   });
 });

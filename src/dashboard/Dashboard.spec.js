@@ -17,18 +17,17 @@ describe('Testsuite: <Dashboard />', () => {
   describe('Testset: shows the controls and display', () => {
     // Testcase
     it('Testcase: Shows Controls component', () => {
-      const { queryByTestId } = render(<Dashboard />);
-      const ancestor = queryByTestId('dashboard-component');
-      const controls = queryByTestId('controls-component');
-      console.log('controls', controls);
+      const { getByTestId } = render(<Dashboard />);
+      const ancestor = getByTestId('dashboard-component');
+      const controls = getByTestId('controls-component');
       expect(ancestor).toContainElement(controls);
     });
 
     // Testcase
     it('Testcase: Shows display component', () => {
-      const { queryByTestId } = render(<Dashboard />);
-      const ancestor = queryByTestId('dashboard-component');
-      const display = queryByTestId('display-component');
+      const { getByTestId } = render(<Dashboard />);
+      const ancestor = getByTestId('dashboard-component');
+      const display = getByTestId('display-component');
       expect(ancestor).toContainElement(display);
     });
   });

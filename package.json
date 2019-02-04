@@ -1,18 +1,17 @@
 {
-  "name": "testing3",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3"
-  },
+  "name": "testing-iii",
+  "version": "1.0.0",
+  "description": "Testing Jest With React 2nd Try",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "keywords": [],
+  "repository": "https://github.com/jamespagedev/testing-i.git",
+  "author": "jamespagedev <jamespagedev@outlook.com>",
+  "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -22,6 +21,11 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3"
+  },
   "devDependencies": {
     "jest-dom": "^3.0.1",
     "react-testing-library": "^5.4.4"

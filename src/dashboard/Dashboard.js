@@ -6,14 +6,14 @@ import Controls from '../controls/Controls';
 class Dashboard extends React.Component {
   state = {
     locked: false,
-    closed: false,
+    closed: false
   };
 
   render() {
     const { closed, locked } = this.state;
 
     return (
-      <>
+      <div data-testid='dashboard-component'>
         <Display locked={locked} closed={closed} />
         <Controls
           locked={locked}
@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
           toggleLocked={this.toggleLocked}
           toggleClosed={this.toggleClosed}
         />
-      </>
+      </div>
     );
   }
 
